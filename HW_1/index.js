@@ -83,8 +83,6 @@ buttonAddAll.forEach((el, index) => {
             errorAll[index].textContent = " ";
             buttonOutAll[index].disabled = false;
         }
-        console.log(scheduleData[index].currentPerson);
-        console.log(freeSpace);
         freeSpaceAll[index].textContent = `Свободных мест: ${freeSpace}`;
         
 
@@ -106,8 +104,6 @@ buttonOutAll.forEach((el, index) => {
             el.disabled = true;
             errorAll[index].textContent = "!!!Список пуст!!! ";
         }
-        console.log(scheduleData[index].currentPerson);
-        console.log(freeSpace);
         freeSpaceAll[index].textContent = `Свободных мест: ${freeSpace}`;
     })
 })
