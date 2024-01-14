@@ -49,7 +49,9 @@ const contentHtml = scheduleData.
                     <div class="lesson">
                         <h2>${el.lesson}</h2>
                         <p>${el.date}</p>
-                        <p>Осталось мест: ${el.maxPerson - el.currentPerson}</p>
+                        <p>Кол-во мест: ${el.maxPerson}</p>
+                        <p>Кол-во участников: ${el.currentPerson}</p>
+                        <p class="freeSpace"></p>
                         <p class="error"></p>
                         <div>
                             <button class="buttonAdd" >Записаться на занятие</button>
@@ -64,6 +66,8 @@ schedule.innerHTML = contentHtml;
 const buttonAddAll = document.querySelectorAll(".buttonAdd");
 const buttonOutAll = document.querySelectorAll(".buttonOut");
 const errorAll = document.querySelectorAll(".error");
+const freeSpaceAll = document.querySelectorAll(".freeSpace");
+
 
 buttonAddAll.forEach((el, index) => {
     el.addEventListener("click", () => {
@@ -71,7 +75,8 @@ buttonAddAll.forEach((el, index) => {
         let currentPerson = scheduleData[index].currentPerson;
         let maxPerson = scheduleData[index].maxPerson;
         scheduleData[index].currentPerson += 1;
-        if(currentPerson >= maxPerson - 1) {
+        let freeSpace = (maxPerson - currentPerson) - 1;
+        if(freeSpace === 0) {
             el.disabled = true;
             errorAll[index].textContent = "!!!Запись закончена!!!";
         } else {
@@ -79,6 +84,9 @@ buttonAddAll.forEach((el, index) => {
             buttonOutAll[index].disabled = false;
         }
         console.log(scheduleData[index].currentPerson);
+        console.log(freeSpace);
+        freeSpaceAll[index].textContent = `Свободных мест: ${freeSpace}`;
+        
 
     })
 })
@@ -87,8 +95,10 @@ buttonOutAll.forEach((el, index) => {
     el.addEventListener("click", () => {
         let currentPerson = scheduleData[index].currentPerson;
         let maxPerson = scheduleData[index].maxPerson;
+        let freeSpace = (maxPerson - currentPerson) + 1 ;
         scheduleData[index].currentPerson -= 1;
-        if(currentPerson - 1 > 0 && currentPerson <= maxPerson) {
+        
+        if(freeSpace > 0 && freeSpace < maxPerson) {
             errorAll[index].textContent = " ";
             buttonAddAll[index].disabled = false;
             
@@ -96,10 +106,8 @@ buttonOutAll.forEach((el, index) => {
             el.disabled = true;
             errorAll[index].textContent = "!!!Список пуст!!! ";
         }
-        
-        
-        
         console.log(scheduleData[index].currentPerson);
-
+        console.log(freeSpace);
+        freeSpaceAll[index].textContent = `Свободных мест: ${freeSpace}`;
     })
 })

@@ -11,11 +11,18 @@ button {
     padding: 10px; 
 }
 .buttonAdd {
-
     color: darkgreen;
+}
+.buttonAdd:hover {
+    color: white;
+    background-color: green;
 }
 .buttonOut {
     color: red;
+}
+.buttonOut:hover {
+    color: white;
+    background-color: red;
 }
 .error {
     color: red;
