@@ -51,7 +51,7 @@ const contentHtml = scheduleData.
                         <p>${el.date}</p>
                         <p>Кол-во мест: ${el.maxPerson}</p>
                         <p class="student">Кол-во участников: ${el.currentPerson}</p>
-                        <p class="freeSpace"></p>
+                        <p class="freeSpace">Свободных мест: ${el.maxPerson - el.currentPerson}</p>
                         <p class="error"></p>
                         <div>
                             <button class="buttonAdd" >Записаться на занятие</button>
