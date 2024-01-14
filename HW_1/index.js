@@ -50,7 +50,7 @@ const contentHtml = scheduleData.
                         <h2>${el.lesson}</h2>
                         <p>${el.date}</p>
                         <p>Кол-во мест: ${el.maxPerson}</p>
-                        <p>Кол-во участников: ${el.currentPerson}</p>
+                        <p class="student">Кол-во участников: ${el.currentPerson}</p>
                         <p class="freeSpace"></p>
                         <p class="error"></p>
                         <div>
@@ -67,6 +67,7 @@ const buttonAddAll = document.querySelectorAll(".buttonAdd");
 const buttonOutAll = document.querySelectorAll(".buttonOut");
 const errorAll = document.querySelectorAll(".error");
 const freeSpaceAll = document.querySelectorAll(".freeSpace");
+const studentAll = document.querySelectorAll(".student");
 
 
 buttonAddAll.forEach((el, index) => {
@@ -84,7 +85,7 @@ buttonAddAll.forEach((el, index) => {
             buttonOutAll[index].disabled = false;
         }
         freeSpaceAll[index].textContent = `Свободных мест: ${freeSpace}`;
-        
+        studentAll[index].textContent = `Кол-во участников: ${currentPerson + 1}`;
 
     })
 })
@@ -105,5 +106,6 @@ buttonOutAll.forEach((el, index) => {
             errorAll[index].textContent = "!!!Список пуст!!! ";
         }
         freeSpaceAll[index].textContent = `Свободных мест: ${freeSpace}`;
+        studentAll[index].textContent = `Кол-во участников: ${currentPerson - 1}`;
     })
 })
