@@ -27,13 +27,13 @@ function showNextSlide() {
 
 // Функция для обновления отображения слайдера
 function updateSlider() {
-    slides.forEach((slide, index) => {
-        if (index === slideIndex) {
-            slide.style.display = "block";
-        } else {
-            slide.style.display = "none";
-        }
-    })
+  	slides.forEach((slide, index) => {
+    	if (index === slideIndex) {
+      		slide.style.display = "block";
+    	} else {
+    		slide.style.display = "none";
+    	}
+  	});
 }
 
 // Функция изменения кнопок навигации слайдера
@@ -43,17 +43,9 @@ function activeDot(index) {
 }
 
 dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-        slideIndex = index;
-        updateSlider();
-        activeDot(slideIndex);
-    })
-})
-
-
-
-
-
-
-
-
+  	dot.addEventListener("click", () => {
+    	slideIndex = index;
+    	updateSlider();
+    	activeDot(slideIndex);
+  	});
+});
