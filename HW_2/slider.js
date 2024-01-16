@@ -28,11 +28,11 @@ function showNextSlide() {
 // Функция для обновления отображения слайдера
 function updateSlider() {
   	slides.forEach((slide, index) => {
-    	if (index === slideIndex) {
-      		slide.style.display = "block";
-    	} else {
-    		slide.style.display = "none";
-    	}
+    	  if (index === slideIndex) {
+      		  slide.style.display = "block";
+    	  } else {
+    		    slide.style.display = "none";
+    	  }
   	});
 }
 
@@ -43,8 +43,8 @@ function activeDot(index) {
 
 dots.forEach((dot, index) => {
   	dot.addEventListener("click", () => {
-    	slideIndex = index;
-    	updateSlider();
-    	activeDot(slideIndex);
+    	  slideIndex = index;
+    	  updateSlider();
+    	  activeDot(slideIndex);
   	});
 });
