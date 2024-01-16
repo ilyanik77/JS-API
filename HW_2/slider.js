@@ -28,7 +28,7 @@ function showNextSlide() {
 
 // Функция для обновления отображения слайдера
 function updateSlider() {
-  	slides.forEach((slide, index) => {
+    slides.forEach((slide, index) => {
     	if (index === slideIndex) {
       		slide.style.display = "block";
     	} else {
