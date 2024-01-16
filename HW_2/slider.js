@@ -49,3 +49,8 @@ dots.forEach((dot, index) => {
     	activeDot(slideIndex);
   	});
 });
+
+
+
+
+
