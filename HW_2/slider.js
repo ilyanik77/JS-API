@@ -13,38 +13,47 @@ nextButton.addEventListener("click", showNextSlide);
 
 // Функция для показа предыдущего слайда
 function showPreviousSlide() {
-  	slideIndex = (slideIndex - 1 + slideCount) % slideCount;
-  	updateSlider();
-  	activeDot(slideIndex);
+    slideIndex = (slideIndex - 1 + slideCount) % slideCount;
+    updateSlider();
+    activeDot(slideIndex);
 }
 
 // Функция для показа следующего слайда
 function showNextSlide() {
-  	slideIndex = (slideIndex + 1) % slideCount;
-  	updateSlider();
-  	activeDot(slideIndex);
+    slideIndex = (slideIndex + 1) % slideCount;
+    updateSlider();
+    activeDot(slideIndex);
 }
 
 // Функция для обновления отображения слайдера
 function updateSlider() {
-  	slides.forEach((slide, index) => {
-    	if (index === slideIndex) {
-      		slide.style.display = "block";
-    	} else {
-    		slide.style.display = "none";
-    	}
-  	});
+    slides.forEach((slide, index) => {
+        if (index === slideIndex) {
+            slide.style.display = "block";
+        } else {
+            slide.style.display = "none";
+        }
+    })
 }
 
+// Функция изменения кнопок навигации слайдера
 function activeDot(index) {
-  	dots.forEach((item) => item.classList.remove("active_dot"));
-  	dots[index].classList.add("active_dot");
+    dots.forEach((item) => item.classList.remove("active_dot"));
+    dots[index].classList.add("active_dot");
 }
 
 dots.forEach((dot, index) => {
-  	dot.addEventListener("click", () => {
-    	slideIndex = index;
-    	updateSlider();
-    	activeDot(slideIndex);
-  	});
-});
+    dot.addEventListener("click", () => {
+        slideIndex = index;
+        updateSlider();
+        activeDot(slideIndex);
+    })
+})
+
+
+
+
+
+
+
+
