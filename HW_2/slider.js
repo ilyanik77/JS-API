@@ -25,6 +25,7 @@ function showNextSlide() {
     activeDot(slideIndex);
 }
 
+
 // Функция для обновления отображения слайдера
 function updateSlider() {
   	slides.forEach((slide, index) => {
