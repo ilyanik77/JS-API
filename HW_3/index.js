@@ -13,18 +13,7 @@ async function fetchPhotos() {try {
   	}
 }
 
-async function fetchPhotos() {
-  	try {
-    	const response = await fetch(
-      	`https://api.unsplash.com/photos?page=${page}&per_page=9&		client_id=Ys1zvoO5KfCyOBFfUEWhTTvfbOZoZgsOj7ZpL_5pTew`);
 
-    	const photos = await response.json();
-    	return photos;
-  	} catch (error) {
-    	console.error("Ошибка при загрузке фотографий:", error);
-    	return [];
-  	}
-}
 async function loadMorePhotos(page) {
   	const photos = await fetchPhotos();
   	const nameUser = photos[0].user.first_name;
