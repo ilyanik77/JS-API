@@ -1,0 +1,15 @@
+.title {
+    font-size: 45px;
+}
+
+.nameUser {
+    font-size: 25px;
+}
+
+#likes {
+    font-size: 20px;
+}
+
+#btnLikes {
+    padding: 10px 25px;
+}
