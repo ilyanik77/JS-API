@@ -37,4 +37,5 @@ async function loadMorePhotos(page) {
     	likesEl.textContent = `Лайки: ${likes}`;
   	});
 }
+
 loadMorePhotos(page);
