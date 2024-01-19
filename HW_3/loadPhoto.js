@@ -13,7 +13,6 @@ async function fetchPhotos() {try {
   	}
 }
 
-
 async function loadMorePhotos(page) {
   	const photos = await fetchPhotos();
   	const nameUser = photos[0].user.first_name;
