@@ -4,7 +4,7 @@ let page = Math.floor(Math.random() * 100) + 1;
 async function fetchPhotos() {
     try {
         const response = await fetch(
-            `https://api.unsplash.com/photos?page=${page}&per_page=9&		
+          `https://api.unsplash.com/photos?page=${page}&per_page=9&		
             client_id=Ys1zvoO5KfCyOBFfUEWhTTvfbOZoZgsOj7ZpL_5pTew`
         );
 
@@ -39,5 +39,4 @@ async function loadMorePhotos(page) {
         likesEl.textContent = `Лайки: ${likes}`;
     });
 }
-
 loadMorePhotos(page);
