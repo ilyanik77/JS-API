@@ -20,14 +20,14 @@ async function loadMorePhotos(page) {
   	let likes = photos[0].likes;
 
   	const contentHtml = `<article>
-					  		<div class="">
-						  		<h2 class="title">Photo</h2>
+							<div class="">
+								<h2 class="title">Photo</h2>
 						  		<img src="${photo}" alt="photo">
 						  		<p class="nameUser">Фотограф: ${nameUser} </p>
 						  		<p id="likes">Лайки: ${likes}</p>
 							  	<button id="btnLikes">Нравится</button>
 							</div>
-					  	</article>`;
+						</article>`;
   	photoContainer.innerHTML = contentHtml;
 
   	btnLikes.addEventListener("click", () => {
