@@ -1,11 +1,9 @@
 const photoContainer = document.getElementById("photo__container");
 let page = Math.floor(Math.random() * 100) + 1;
 
-async function fetchPhotos() {
-  try {
-    const response = await fetch(
-      `https://api.unsplash.com/photos?page=${page}&per_page=9&		client_id=Ys1zvoO5KfCyOBFfUEWhTTvfbOZoZgsOj7ZpL_5pTew`
-    );
+async function fetchPhotos() {try {
+    	const response = await fetch(
+      	`https://api.unsplash.com/photos?page=${page}&per_page=9&		client_id=Ys1zvoO5KfCyOBFfUEWhTTvfbOZoZgsOj7ZpL_5pTew`);
 
     const photos = await response.json();
     return photos;
@@ -21,7 +19,7 @@ async function loadMorePhotos(page) {
   const photo = photos[0].urls.small;
   let likes = photos[0].likes;
 
-  const contentHtml = `<article>
+  	const contentHtml = `<article>
 					  		<div class="">
 						  		<h2 class="title">Photo</h2>
 						  		<img src="${photo}" alt="photo">
@@ -30,7 +28,7 @@ async function loadMorePhotos(page) {
 							  	<button id="btnLikes">Нравится</button>
 							</div>
 					  	</article>`;
-  photoContainer.innerHTML = contentHtml;
+  	photoContainer.innerHTML = contentHtml;
 
   btnLikes.addEventListener("click", () => {
     const likesEl = document.getElementById("likes");
