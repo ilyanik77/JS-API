@@ -25,15 +25,16 @@ function showNextSlide() {
     activeDot(slideIndex);
 }
 
+
 // Функция для обновления отображения слайдера
 function updateSlider() {
-  	slides.forEach((slide, index) => {
+    slides.forEach((slide, index) => {
     	if (index === slideIndex) {
-      		slide.style.display = "block";
+      	    slide.style.display = "block";
     	} else {
-    		slide.style.display = "none";
+    	    slide.style.display = "none";
     	}
-  	});
+    });
 }
 
 // Функция изменения кнопок навигации слайдера
@@ -43,11 +44,11 @@ function activeDot(index) {
 }
 
 dots.forEach((dot, index) => {
-  	dot.addEventListener("click", () => {
-    	slideIndex = index;
-    	updateSlider();
-    	activeDot(slideIndex);
-  	});
+    dot.addEventListener("click", () => {
+        slideIndex = index;
+        updateSlider();
+        activeDot(slideIndex);
+    });
 });
 
 

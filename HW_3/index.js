@@ -24,8 +24,8 @@ async function loadMorePhotos(page) {
 	
   	console.log(photos);
 
-	const contentHtml = `
-						<article>
+	const contentHtml =
+                        `<article>
 					  		<div class="">
 						  		<h2 class="title">Photo</h2>
 						  		<img src="${photo}" alt="photo">
