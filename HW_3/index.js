@@ -15,6 +15,7 @@ async function fetchPhotos() {
   	}
 }
 
+
 async function loadMorePhotos(page) {
 	
   	const photos = await fetchPhotos();
