@@ -1,7 +1,6 @@
 const photoContainer = document.getElementById("photo__container");
 let page = Math.floor(Math.random() * 100) + 1;
 
-
 async function fetchPhotos() {
   	try {
     	const response = await fetch(
