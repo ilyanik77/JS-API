@@ -24,8 +24,7 @@ async function loadMorePhotos(page) {
     const photo = photos[0].urls.small;
     let likes = photos[0].likes;
     
-
-    const contentHtml = `<article>
+	const contentHtml = `<article>
 							<div class="">
 								<h2 class="title">Photo</h2>
 						  		<img src="${photo}" alt="photo">
