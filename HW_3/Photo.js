@@ -4,8 +4,7 @@ let page = Math.floor(Math.random() * 100) + 1;
 async function fetchPhotos() {
     try {
         const response = await fetch(
-          `https://api.unsplash.com/photos?page=${page}&per_page=9&		
-            client_id=Ys1zvoO5KfCyOBFfUEWhTTvfbOZoZgsOj7ZpL_5pTew`
+          `https://api.unsplash.com/photos?page=${page}&per_page=9&client_id=hEpSgWGYqKWEw4rSR90qipA0WHQyUCN5mvelgbBg6o4;`
         );
 
         const photos = await response.json();
@@ -15,12 +14,16 @@ async function fetchPhotos() {
         return [];
     }
 }
+// qoEvI0l1RubiFIXtlV2dEt9e5S-C1XTYdZPh9uFyeoU
 
 async function loadMorePhotos(page) {
+    
     const photos = await fetchPhotos();
+    console.log(photos);
     const nameUser = photos[0].user.first_name;
     const photo = photos[0].urls.small;
     let likes = photos[0].likes;
+    
 
     const contentHtml = `<article>
 							<div class="">
